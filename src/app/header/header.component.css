@@ -1,0 +1,16 @@
+*{
+    background-color:#DEB887;
+}
+.navbar{
+    display: flex;
+    align-items: center;
+
+}
+h1{
+    padding-left: 20px;
+    color:rgb(200, 101, 10);
+}
+a{
+    color: rgb(220, 101, 10);
+    font-weight: bold;
+}

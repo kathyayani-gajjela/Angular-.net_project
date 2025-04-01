@@ -1,0 +1,18 @@
+<!-- cart-page.component.html -->
+<p class="cartheading">Your Cart</p>
+<div *ngIf="cartItems.length === 0">Your cart is empty!</div>
+<div class="headings">
+  <p class="headingsitems">Items</p>
+  <p class="headingsitems">Prices</p>
+</div>
+<ul *ngIf="cartItems.length > 0">
+  <div *ngFor="let item of cartItems" class="cartitems">
+    <div class="cartitems1">
+      <img [src]="item.image"  alt="{{ item.foodname }}" class="image"  width="50">
+      <div>{{ item.foodname }}</div>
+    </div>
+    <div class="price">{{item.price}}</div>
+    <button (click)="removeFromCart(item)" class="btn btn-warning" style="height: 40px;">Remove</button>
+  </div>
+</ul>
+
