@@ -1,15 +1,57 @@
 <p class="cartheading">Your Cart</p>
-<div class="headings">
-    <p class="headingsitems">Items</p>
-    <p class="headingsitems">Prices</p>
-</div>
-<div *ngFor="let item of cartItems" class="cartitems">
-    <div class="cartitems1">
-        <img src={{item.image}} alt="{{ item.name }}" class="image"  width="50">
-        <div>{{item.name}}</div>
+<div *ngIf="cartItems.length > 0">
+    <div class="headings">
+        <p class="headingsitems">Items</p>
+        <p class="headingsitems">Prices</p>
+        <p class="headingsitems">Color</p>
     </div>
-    <div class="price">{{item.price}}</div>
-    <div class="color">{{item.color}}</div>
-    <button  class="btn btn-warning" style="height: 40px;">Remove</button>
+    <div *ngFor="let item of cartItems" class="cartitems">
+        <div class="cartitems1">
+            <img src={{item.image}} alt="{{ item.name }}" class="image"  width="50">
+            <div>{{item.name}}</div>
+        </div>
+        <div class="price">{{item.price}}</div>
+        <div class="color">{{item.color}}</div>
+        <button  class="btn btn-warning" (click)="deletedata(item)"style="height: 40px;">Remove</button>
+    </div>
+    
+
+
+
+    <div>
+        <a class="btn btn-warning" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample" style="margin-left: 1005px;">Check Out</a>
+        <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel" style="width: 500px;">
+            <div class="offcanvas-header" >
+                <h5 class="offcanvas-title" id="offcanvasExampleLabel">CheckOut</h5>
+                <button type="button"   class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <div>
+                    <div *ngFor="let item of cartItems" style="display: flex;">
+                        <div style="width:300px">{{item.name}}</div>
+                        <div style="padding-left: 10px;">{{item.price}}</div>
+                    </div>
+                    <div style="display: flex; margin-left: 200px; margin-top: 30px;">
+                        <div>Total Price</div>
+                        <div style="margin-left: 30px;">₹{{totalPrice}}</div>
+                    </div>
+                    <div>
+                        <button  class="btn btn-warning" style="margin-left: 300px; margin-top: 50px;" >Pay</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+
+
+    
+
+
+</div>
+<div *ngIf="cartItems.length === 0">
+    <p>Your cart is empty.</p>
 </div>
   

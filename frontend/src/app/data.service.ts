@@ -14,4 +14,11 @@ export class DataService {
     currentItems.push(weatherForecast);  // Simply add the item
     this.cartItemsSource.next([...currentItems]); 
   }
+
+  removeItemFromCart(item:any){
+    const currentItems = this.cartItemsSource.value;
+    const updatedItems = currentItems.filter(existingItem => existingItem.name !== item.name);
+    this.cartItemsSource.next(updatedItems);  // Emit the updated list
+  }
+  
 }

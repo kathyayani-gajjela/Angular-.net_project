@@ -12,12 +12,22 @@ import { WeatherforecastService } from '../weatherforecast.service';
 })
 export class CartPageComponent {
   cartItems:any[]=[];
+  totalPrice:number=0;
   constructor(private dataService:DataService){}
   ngOnInit(){
     this.dataService.currentCart.subscribe(items=>{
       this.cartItems=items;
-      console.log(items);
+      this.calculateTotalPrice();
+      
     });
   }
+  deletedata(item:any){
+    this.dataService.removeItemFromCart(item);
+  }
+  calculateTotalPrice() {
+    this.totalPrice = this.cartItems.reduce((sum, item) => sum + item.price, 0);
+  }
+  
+
 
 }
