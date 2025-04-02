@@ -14,10 +14,6 @@
         <div class="color">{{item.color}}</div>
         <button  class="btn btn-warning" (click)="deletedata(item)"style="height: 40px;">Remove</button>
     </div>
-    
-
-
-
     <div>
         <a class="btn btn-warning" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample" style="margin-left: 1005px;">Check Out</a>
         <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel" style="width: 500px;">
@@ -43,13 +39,6 @@
             </div>
         </div>
     </div>
-    
-
-
-
-    
-
-
 </div>
 <div *ngIf="cartItems.length === 0">
     <p>Your cart is empty.</p>

@@ -27,7 +27,4 @@ export class CartPageComponent {
   calculateTotalPrice() {
     this.totalPrice = this.cartItems.reduce((sum, item) => sum + item.price, 0);
   }
-  
-
-
 }
