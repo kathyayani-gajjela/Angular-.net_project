@@ -1,7 +1,8 @@
 namespace backend.Models{
     public class Product{
-        public int Id {get;set;}
-        public int RoomNumber{get;set;}
-        public string? ClientName{get;set;}
+        public string name {get;set;}
+        public int price{get;set;}
+        public string? color{get;set;}
+        public string? image{get;set;}
     }
 }

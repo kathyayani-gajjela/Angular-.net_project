@@ -1,0 +1,15 @@
+<p class="cartheading">Your Cart</p>
+<div class="headings">
+    <p class="headingsitems">Items</p>
+    <p class="headingsitems">Prices</p>
+</div>
+<div *ngFor="let item of cartItems" class="cartitems">
+    <div class="cartitems1">
+        <img src={{item.image}} alt="{{ item.name }}" class="image"  width="50">
+        <div>{{item.name}}</div>
+    </div>
+    <div class="price">{{item.price}}</div>
+    <div class="color">{{item.color}}</div>
+    <button  class="btn btn-warning" style="height: 40px;">Remove</button>
+</div>
+  
