@@ -1,0 +1,34 @@
+.search {
+    width: 300px;
+    display: flex;
+    align-items: center;
+    gap: 10px; 
+
+}
+
+.form-control {
+    width: auto; 
+    flex-grow: 0; 
+    display: inline-block;
+}
+.input-group{
+    padding-top: 50px;
+    padding-left: 450px;
+}
+.main{
+    display: flex;
+
+}
+.image{
+    margin-top: 50px;
+    margin-left: 50px;
+    width:200px
+}
+.food-details{
+    margin-left: 50px;
+    margin-top: 50px;
+}
+.AddToCart{
+    padding:50px;
+    margin-top: 70px;
+}

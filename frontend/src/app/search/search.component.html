@@ -1,1 +1,24 @@
-<p>search works!</p>
+
+<div class="input-group">
+    <input type="text" class="form-control" [(ngModel)]="inputs" placeholder="Search Products">
+    <button class="btn btn-warning" type="button" (click)="storeValue()" id="button-addon2">Search</button>
+</div>
+
+@for( weatherForecast of weatherForecasts;track $index){
+    <div *ngIf="weatherForecast.name.toLowerCase()===inputs.toLowerCase()" class="main">
+        <img src="{{weatherForecast.image}}" alt="{{weatherForecast.name}}" class="image">
+        <div class="food-details">
+            <div><h2>{{weatherForecast.name}}</h2></div>
+            <div class="details">
+                <p>Price: {{weatherForecast.price}}</p>
+                <p>Color: {{weatherForecast.color}}</p>
+                
+            </div>
+        </div>
+        <div class="AddToCart">
+            <button type="button" (click)="senddata(weatherForecast)" class="btn btn-warning">Add To Cart</button> 
+        </div> 
+    </div>
+}
+
+
