@@ -11,7 +11,11 @@ export class WeatherforecastService {
   constructor() { }
   private http=inject(HttpClient);
   private apiUrl=environment.apiURL+'/api/products';
+  private userapiUrl=environment.apiURL+'/api/User';
   public get():Observable<any>{
     return this.http.get(this.apiUrl);
+  }
+  public getUsers():Observable<any>{
+    return this.http.get(this.userapiUrl);
   }
 }
